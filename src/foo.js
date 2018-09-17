@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios'
 
-export function fetchTest() {
-  return axios.get("www.baidu.com");
+export function fetchTest () {
+  return axios.get('www.baidu.com')
 }
 
-export const foo = "myu";
+export const foo = 'myu'

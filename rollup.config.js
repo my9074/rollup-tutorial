@@ -3,6 +3,7 @@ import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import replace from "rollup-plugin-replace";
 import { uglify } from "rollup-plugin-uglify";
+import { eslint } from "rollup-plugin-eslint";
 
 export default {
   input: "src/main.js",
@@ -12,6 +13,9 @@ export default {
     format: "iife"
   },
   plugins: [
+    eslint({
+      include: ['src/**']
+    }),
     replace({
       "process.env.NODE_ENV": '"production"'
     }),

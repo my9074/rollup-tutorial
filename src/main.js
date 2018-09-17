@@ -1,9 +1,9 @@
-import { fetchTest, foo } from "./foo";
+import { fetchTest } from './foo'
 
 fetchTest()
   .then(data => {
-    console.log(data);
+    console.log(data)
   })
   .catch(err => {
-    console.log(`error --> ${err}`);
-  });
+    console.log(`error --> ${err}`)
+  })
