@@ -6,10 +6,17 @@
         "useBuiltIns": "usage",
         "modules": false,
         "targets": {
-          "browsers": ["last 2 version", "> 1%", "IE 8"]
+          "browsers": ["last 2 version", "> 1%", "IE 9"]
         }
       }
     ]
   ],
-  "plugins": ["@babel/plugin-transform-runtime"]
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2
+      }
+    ]
+  ]
 }
