@@ -10,7 +10,9 @@ export default {
   output: {
     file: 'dist/monitor-action.js',
     name: 'monitorAc',
-    format: 'iife'
+    format: 'iife',
+    sourcemap: true,
+    sourcemapFile: 'dist'
   },
   plugins: [
     eslint({

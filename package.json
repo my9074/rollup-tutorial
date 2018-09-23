@@ -4,10 +4,8 @@
   "description": "",
   "main": "bundle.js",
   "scripts": {
-    "build": "npm run build:prod && npm run build:stag && npm run build:test",
+    "build": "npm run build:prod",
     "build:prod": "ROLLUP_ENV=production rollup -c -o dist/monitor-action.js",
-    "build:stag": "ROLLUP_ENV=stag rollup -c -o dist/monitor-action-stag.js",
-    "build:test": "ROLLUP_ENV=test rollup -c -o dist/monitor-action-test.js",
     "dev": "rollup -c -w",
     "lint": "eslint --fix src"
   },
