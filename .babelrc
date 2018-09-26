@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "usage",
+        "useBuiltIns": false,
         "modules": false,
         "targets": {
           "browsers": ["last 2 version", "> 1%", "IE 9"]
