@@ -1,3 +1,4 @@
+import 'es6-promise/auto'
 import fetchServer from './fetch'
 import debounce from 'lodash-es/debounce'
 

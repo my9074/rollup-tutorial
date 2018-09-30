@@ -31,8 +31,9 @@
     "rollup-plugin-uglify": "^5.0.2"
   },
   "dependencies": {
+    "@babel/runtime-corejs2": "^7.0.0",
     "axios": "^0.18.0",
-    "lodash-es": "^4.17.11",
-    "@babel/runtime-corejs2": "^7.0.0"
+    "es6-promise": "^4.2.5",
+    "lodash-es": "^4.17.11"
   }
 }
