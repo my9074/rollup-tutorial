@@ -31,8 +31,9 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "axios": "^0.18.0",
+    "cookies-js": "^1.2.3",
     "es6-promise": "^4.2.5",
+    "jsonp-promise": "^0.1.2",
     "lodash-es": "^4.17.11"
   }
 }

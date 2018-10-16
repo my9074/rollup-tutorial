@@ -1,15 +1,19 @@
 import 'es6-promise/auto'
-import fetchServer from './fetch'
+import {
+  validateSession,
+  isSubAccount,
+  logout,
+  getCompanyID,
+  redirectUrl
+} from './utils'
 import debounce from 'lodash-es/debounce'
 
-let intervalId = null
-let listenerId = null
-let isActionFlag = null
-const DEFAULT_INTERVAL = 100 * 60 * 2
+const DEFAULT_INTERVAL = 1000 * 60 * 2
+let isActionFlag = true
 
 function bootstrap () {
-  listenerId = addActionListener(assignActionFlag)
-  intervalId = setInterval(healthCheck, DEFAULT_INTERVAL)
+  addActionListener(assignActionFlag)
+  setInterval(healthCheck, DEFAULT_INTERVAL)
 }
 
 function addActionListener () {
@@ -22,12 +26,26 @@ function addActionListener () {
 
 function assignActionFlag () {
   isActionFlag = true
-  console.log('click click')
 }
 
-async function healthCheck () {
-  await fetchServer(isActionFlag)
-  isActionFlag = null
+function healthCheck () {
+  if (isSubAccount()) {
+    validateSession(isActionFlag)
+      .then(data => {
+        if (data.expired) {
+          const companyID = getCompanyID()
+          logout().then(data => {
+            redirectUrl(companyID)
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+      .finally(() => {
+        isActionFlag = null
+      })
+  }
 }
 
 bootstrap()
