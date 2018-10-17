@@ -12,6 +12,7 @@ export function isSubAccount () {
 }
 
 export function logout () {
+  // Cookies will be carried with logout jsonp in jdcloud.com domain
   const { promise } = jsonp(`${baseUrl}/subAccount/logout`)
   return promise
 }

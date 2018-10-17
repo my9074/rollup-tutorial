@@ -1,11 +1,11 @@
 {
-  "name": "my-rollup-project",
+  "name": "iam-console-subaccount-monitor",
   "version": "1.0.0",
-  "description": "",
-  "main": "bundle.js",
+  "description": "用于实现子账号过期行为，到期后会自动清空相应 cookie 及登出到子账号登录页",
   "scripts": {
     "build": "npm run build:prod",
-    "build:prod": "ROLLUP_ENV=production rollup -c -o dist/monitor-action.js",
+    "build:prod": "npm run clean && ROLLUP_ENV=production rollup -c -o dist/subaccount-monitor.js",
+    "clean": "rimraf dist",
     "dev": "rollup -c -w",
     "lint": "eslint --fix src"
   },
@@ -21,6 +21,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "rimraf": "^2.6.2",
     "rollup": "^0.65.2",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.1.6",

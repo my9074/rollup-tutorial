@@ -7,8 +7,8 @@ import { eslint } from 'rollup-plugin-eslint'
 export default {
   input: 'src/main.js',
   output: {
-    file: 'dist/monitor-action.js',
-    name: 'monitorAc',
+    file: 'dist/subaccount-monitor.js',
+    name: 'subMonitor',
     format: 'iife',
     sourcemap: true,
     sourcemapFile: 'dist'
