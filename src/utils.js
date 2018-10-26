@@ -7,8 +7,9 @@ const baseUrl = startsWith(location.href, 'https')
   ? `https://uc.jdcloud.com`
   : 'http://uc.jdcloud.com'
 
-export function isSubAccount () {
-  return !!Cookies.get('account')
+export function isTicketSubAccount () {
+  // TODO: Judged by ticketId, it was not very safe
+  return !!Cookies.get('account') && !!Cookies.get('ticketId')
 }
 
 export function logout () {
