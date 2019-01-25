@@ -9,7 +9,8 @@ const baseUrl = startsWith(location.href, 'https')
 
 export function isTicketSubAccount () {
   // TODO: Judged by ticketId, it was not very safe
-  return !!Cookies.get('account') && !!Cookies.get('ticketId')
+  // Ignore role cookie of credentials
+  return !!Cookies.get('account') && !!Cookies.get('ticketId') && !Cookies.get('credentials')
 }
 
 export function logout () {
