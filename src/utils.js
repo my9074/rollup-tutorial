@@ -1,11 +1,9 @@
 /* eslint-disable prefer-promise-reject-errors */
 import Cookies from 'cookies-js'
 import jsonp from 'jsonp-promise'
-import startsWith from 'lodash-es/startsWith'
+// import startsWith from 'lodash-es/startsWith'
 
-const baseUrl = startsWith(location.href, 'https')
-  ? `https://uc.jdcloud.com`
-  : 'http://uc.jdcloud.com'
+const baseUrl = 'http://uc.jdcloud.local'
 
 export function isTicketSubAccount () {
   // TODO: Judged by ticketId, it was not very safe
